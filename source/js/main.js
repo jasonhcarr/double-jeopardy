@@ -16,7 +16,7 @@
         };
 
         function startGame() {
-            $('.start-new-game').hide();
+            $('.start-new-game').slideDown(1500, 'swing').hide();
             var games = storage.get();
             if (games.length > 0) {
                 for (var index = 0; index < games.length; index++) {
@@ -34,10 +34,14 @@
 
         //PROTOTYPE METHODS
         Game.prototype = {
-            buildGame: function(game) {
+            buildGame: function(values) {
                 var source = $('#game-template').html(),
                     template = Handlebars.compile(source),
-                    context = "",
+                    context = {
+                      score: values.score,
+                      right: values.right,
+                      wrong: values.wrong
+                    },
                     html = template(context);
                 $('.wrapper').append(html);
                 this.getQuestion();
@@ -62,8 +66,8 @@
             askQuestion: function(params) {
                 this.values.answer = params.answer;
                 $(this.self[0]).find('.category').html(params.category);
-                $(this.self[0]).find('.question').html(params.question);
-                $(this.self[0]).find('.question-value').html(params.value);
+                $(this.self[0]).find('.question').html(params.question + '...');
+                $(this.self[0]).find('.question-value').html('$' + params.value);
             },
             getUserAnswer: function() {
                 var userAnswer = $(this.self[0]).find('.user-answer').val();
@@ -83,9 +87,9 @@
             },
             postResult: function(result) {
                 if (result) {
-                    $(this.self[0]).find('.result').html("CORRECT!!!");
+                    $(this.self[0]).find('.result').html("CORRECT!!!").css('background', 'green');
                 } else {
-                    $(this.self[0]).find('.result').html("NO. The correct answer was " + this.values.answer + ".");
+                    $(this.self[0]).find('.result').html("NO. The correct answer was " + this.values.answer + ".").css('background', 'red');
                 }
                 this.updateScores(this.calculateScores(result));
             },
@@ -146,9 +150,9 @@
                 wrong: game.wrong,
                 id: Date.now()
             };
-            this.init = function(game) {
+            this.init = function() {
                 var self = this;
-                this.self = this.buildGame(game);
+                this.self = this.buildGame(this.values);
                 $(this.self[0]).find('form').on('submit', function(event) {
                     event.preventDefault();
                     self.getUserAnswer();

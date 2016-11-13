@@ -1,34 +1,164 @@
-.start-new-game header {
-  background-image: url("http://www.bhwlawfirm.com/wp-content/uploads/2015/07/double-jeopardy.png");
-  width: 100vw;
-  height: 100vh; }
-  .start-new-game header h1 {
-    color: #7C0000;
-    background: transparent;
-    font-size: 10em;
-    float: left;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -150%); }
-.start-new-game .start-button {
-  border-radius: 25px;
-  box-shadow: 0px 0px 0px 10px #00041D inset;
-  font-size: 2em;
-  font-weight: bolder;
-  background-color: #FFFF66;
-  color: blue;
-  float: left;
-  height: 150px;
-  width: 310px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 125%); }
+body {
+  height: 100%;
+  background-color: #1726a8; }
 
-.category {
-  font-size: 4em;
-  color: white;
-  background: red; }
+.start-new-game {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url("http://www.bhwlawfirm.com/wp-content/uploads/2015/07/double-jeopardy.png") center; }
+  .start-new-game header {
+    width: 100vw;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center; }
+    .start-new-game header h1 {
+      color: #fcfbfc;
+      font-size: 10em;
+      font-style: italic;
+      margin-top: 20px;
+      opacity: 0.9;
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: #1726a8; }
+    .start-new-game header .start-button {
+      width: 275px;
+      height: 100px;
+      border-radius: 25px;
+      box-shadow: 0 0 0 10px #00041D inset;
+      font-size: 2em;
+      font-weight: bolder;
+      background-color: #bd8dda;
+      opacity: 0.9;
+      color: blue;
+      margin-bottom: 80px;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: black; }
+
+.game-container {
+  box-shadow: 15px #4a0692;
+  background: url("https://www.jeopardy.com/Assets/jeopardy/images/_facebook/fb_profile.jpg") center;
+  background-size: cover;
+  height: 100vh;
+  font-family: Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  .game-container main {
+    padding: 5px;
+    margin-top: 50px;
+    background-color: #EDE9F8;
+    opacity: .95;
+    border: 5px solid #143889;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 70%;
+    height: 60%;
+    -webkit-animation: begin 5s ease;
+    animation: begin 5s ease; }
+@-webkit-keyframes begin {
+  50% {
+    box-shadow: 10px 20px 30px black; } }
+@keyframes begin {
+  50% {
+    box-shadow: 10px 20px 30px black; } }
+  .game-container h2 {
+    margin: 0; }
+  .game-container h4 {
+    margin: 0; }
+  .game-container .category {
+    font-size: 2em;
+    opacity: 1;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #1726a8;
+    color: white; }
+  .game-container .question-value {
+    border: solid 8px black;
+    width: 137px;
+    height: 70px;
+    font-size: 2.5em;
+    background: blue;
+    line-height: 70px;
+    text-align: center;
+    text-shadow: 2px 2px black;
+    color: #DA9E56; }
+  .game-container .question {
+    background: #EDE9F8;
+    opacity: 1;
+    font-size: 1.8em;
+    margin: 0 10px; }
+  .game-container .what-is {
+    margin: 0; }
+  .game-container .user-answer {
+    margin: 0 5px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 1em;
+    width: 150px; }
+  .game-container .pose-question {
+    padding: 0;
+    height: 40px;
+    width: 40px;
+    background: #DA9E56; }
+  .game-container .result {
+    opacity: .8;
+    vertical-align: middle;
+    padding: 3px;
+    margin-top: 10px;
+    border-radius: 10px;
+    text-align: center;
+    color: #EDE9F8;
+    height: 30px;
+    width: 100%;
+    display: hidden; }
+  .game-container footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 40%; }
+    .game-container footer ul {
+      opacity: .6;
+      border-radius: 30px;
+      padding: 0;
+      margin: 0;
+      line-height: 1.3em;
+      text-align: center;
+      vertical-align: center;
+      list-style: none;
+      bottom: 0;
+      color: #EDE9F8;
+      background-color: #3e74e0;
+      width: 100%;
+      box-shadow: 0 0 10px 15px #3e74e0;
+      font-size: 1.3em; }
+      .game-container footer ul .score {
+        -webkit-text-stroke-width: .5px;
+        -webkit-text-stroke-color: #DA9E56; }
+      .game-container footer ul .number-right {
+        -webkit-text-stroke-width: .5px;
+        -webkit-text-stroke-color: green; }
+      .game-container footer ul .number-wrong {
+        -webkit-text-stroke-width: .5px;
+        -webkit-text-stroke-color: red; }
+    .game-container footer .button-container {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 20px; }
+      .game-container footer .button-container .new-game-button {
+        color: #EDE9F8;
+        background: #DA9E56; }
+      .game-container footer .button-container .remove-game-button {
+        color: #EDE9F8;
+        background: #ee0016; }
 
 /*# sourceMappingURL=main.css.map */
