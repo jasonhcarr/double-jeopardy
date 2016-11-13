@@ -1,18 +1,45 @@
-header {
-  background-image: url('');
-  width: 100vw;
-  height: 40%;
-  // float: left;
-  // position: absolute;
-  top: 0;
-  left: 0;
-  background: gray;
+.start-new-game {
+    // display: flex;
+    // flex-direction: column;
+    // flex-wrap: wrap;
+
+    header {
+        background-image: url('http://www.bhwlawfirm.com/wp-content/uploads/2015/07/double-jeopardy.png');
+        width: 100vw;
+        height: 100vh;
+        // float: left;
+        // position: absolute;
+        h1 {
+            color: #7C0000;
+            background: transparent;
+            font-size: 10em;
+            float: left;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -150%);
+        }
+    }
+
+    .start-button {
+      border-radius: 25px;
+       box-shadow:0px 0px 0px 10px #00041D inset;
+      font-size: 2em;
+      font-weight: bolder;
+      background-color: #FFFF66;
+      color: blue;
+      float: left;
+      height: 150px;
+      width: 310px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 125%);
+    }
 }
 
-
-
 .category {
-  font-size: 4em;
-  color: white;
-  background: red;
+    font-size: 4em;
+    color: white;
+    background: red;
 }

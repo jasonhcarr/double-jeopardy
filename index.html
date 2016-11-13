@@ -1,44 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Double JEOPARDY!</title>
-    <link rel="stylesheet" src="/source/styles/main.css">
-    <link rel="stylesheet" src="/source/styles/main.scss">
-  </head>
-  <body>
+    <link rel="stylesheet" href="source/styles/main.css">
+    <link rel="stylesheet" href="source/styles/main.scss">
+</head>
+
+<body>
     <div class="wrapper">
-      <header>
-        <h1>Welcome to</h1>
-        <img src="http://vignette1.wikia.nocookie.net/gameshows/images/1/18/Jeopardy!_1992-1993_Double_Jeopardy_intertitle.png/revision/latest?cb=20140121130018" alt="the double jeopardy game show logo" />
-    </header>
-    <div class="game-container">
-      <main>
-        <h2>CATEGORY:</h2>
-        <div class="category"></div>
-        <h5>VALUE:</h5>
-        <div class="question-value"></div>
-        <h2>QUESTION:</h2>
-        <div class="question">______________________________________</div>
-        <div class="what-is">What is...</div>
-      <form class="" action="index.html" method="post">
-        <input class="user-answer" readonly="readonly" type="text" name="name" placeholder="Answer:">
-        <input class="pose-question" type="button" name="name" value="?">
-      </form>
-      <div class="result"></div>
-      <ul>
-        <li class="score">Your Score is <span></span> .</li>
-        <li class="number-right">You've answered <span></span> right</li>
-        <li class="number-wrong">and <span></span> wrong</li>
-      </ul>
-    </main>
-    </div>
-    <input type="button" class="start-new-game" value="Start New Game">
+    <div class="start-new-game">
+        <header>
+            <h1>Welcome to</h1>
+        </header>
+      <input type="button" class="start-button" value="Start New Game">
+      </div>
+
+    <script id="game-template" type="text/x-handlebars-template">
+        <div class="game-container">
+            <main>
+                <h2>CATEGORY:</h2>
+                <div class="category"></div>
+                <h5>VALUE:</h5>
+                <div class="question-value"></div>
+                <h2>QUESTION:</h2>
+                <div class="question">______________________________________</div>
+                <div class="what-is">What is...</div>
+                <form class="" action="index.html" method="post">
+                    <input class="user-answer" readonly="readonly" type="text" name="name" placeholder="Answer:">
+                    <input class="pose-question" type="button" name="name" value="?">
+                </form>
+                <div class="result"></div>
+                <ul>
+                    <li class="score">Your Score is <span></span> .</li>
+                    <li class="number-right">You've answered <span></span> right</li>
+                    <li class="number-wrong">and <span></span> wrong</li>
+                </ul>
+            </main>
+            <input type="button" class="new-game-button" value="New Game">
+            <input type="button" class="remove-game-button" value="Remove This Game">
+          </div>
+    </script>
   </div>
 
+    <script src="source/js/handlebars-v4.0.5.js" type="text/javascript"></script>
+    <script src="source/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script src="source/js/main.js" type="text/javascript"></script>
+</body>
 
-  <script src="source/js/handlebars-v4.0.5.js" type="text/javascript"></script>
-  <script src="source/js/jquery-3.1.1.min.js" type="text/javascript"></script>
-  <script src="source/js/main.js" type="text/javascript"></script>
-  </body>
 </html>
