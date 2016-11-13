@@ -7,13 +7,10 @@
     background: transparent;
     font-size: 10em;
     float: left;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -150%); }
+    position: absolute; }
 .start-new-game .start-button {
   border-radius: 25px;
-  box-shadow: 0px 0px 0px 10px #00041D inset;
+  box-shadow: 0 0 0 10px #00041D inset;
   font-size: 2em;
   font-weight: bolder;
   background-color: #FFFF66;
@@ -26,9 +23,25 @@
   left: 50%;
   transform: translate(-50%, 125%); }
 
-.category {
-  font-size: 4em;
-  color: white;
-  background: red; }
+body {
+  height: 100%; }
+
+.game-container {
+  height: 100%;
+  display: flex; }
+  .game-container .category {
+    font-size: 4em;
+    color: white;
+    background: red; }
+  .game-container .question-value {
+    background: blue; }
+  .game-container .question {
+    background: green; }
+  .game-container .what-is {
+    background: purple; }
+  .game-container .user-input {
+    background: gold; }
+  .game-container .result {
+    background: brown; }
 
 /*# sourceMappingURL=main.csss.map */

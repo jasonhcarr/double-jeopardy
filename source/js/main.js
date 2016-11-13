@@ -1,7 +1,7 @@
 (function($) {
     "use strict";
 
-    //LOCAL STORAGE SETUP AND CHECK ON PAGE LOAD
+    // LOCAL STORAGE SETUP AND CHECK ON PAGE LOAD
     $(document).ready(function() {
         var allGames = [];
         var storage = {
@@ -17,8 +17,8 @@
 
         function startGame() {
             $('.start-new-game').hide();
-            if (storage.get()) {
-                var games = storage.get();
+            var games = storage.get();
+            if (games.length > 0) {
                 for (var index = 0; index < games.length; index++) {
                     new Game(games[index]);
                 }
@@ -167,7 +167,9 @@
         }
 
         //EVENT HANDLING
-        $('.start-button').on('click', startGame());
+        $('.start-button').on('click', function () {
+            startGame();
+        });
 
         $('.wrapper').on('click', '.new-game-button', function() {
             startGame();

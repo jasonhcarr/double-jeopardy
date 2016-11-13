@@ -2,7 +2,6 @@
     // display: flex;
     // flex-direction: column;
     // flex-wrap: wrap;
-
     header {
         background-image: url('http://www.bhwlawfirm.com/wp-content/uploads/2015/07/double-jeopardy.png');
         width: 100vw;
@@ -15,31 +14,73 @@
             font-size: 10em;
             float: left;
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -150%);
+            // top: 50%;
+            // left: 50%;
+            // transform: translate(-50%, -50%);
         }
     }
 
     .start-button {
-      border-radius: 25px;
-       box-shadow:0px 0px 0px 10px #00041D inset;
-      font-size: 2em;
-      font-weight: bolder;
-      background-color: #FFFF66;
-      color: blue;
-      float: left;
-      height: 150px;
-      width: 310px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, 125%);
+        border-radius: 25px;
+        box-shadow: 0 0 0 10px #00041D inset;
+        font-size: 2em;
+        font-weight: bolder;
+        background-color: #FFFF66;
+        color: blue;
+        float: left;
+        height: 150px;
+        width: 310px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 125%);
     }
 }
 
-.category {
-    font-size: 4em;
-    color: white;
-    background: red;
+body {
+    height: 100%;
+}
+
+.game-container {
+    height: 100%;
+    display: flex;
+
+
+    .category {
+        font-size: 4em;
+        color: white;
+        background: red;
+    }
+
+    .question-value {
+        background: blue;
+    }
+
+    .question {
+        background: green;
+    }
+
+    .what-is {
+        background: purple;
+    }
+
+    .user-input {
+        background: gold;
+    }
+
+    .result {
+        background: brown;
+    }
+
+    ul {
+        .score {}
+
+        .number-right {}
+
+        .number-wrong {}
+    }
+
+    .new-game-button {}
+
+    .remove-game-button {}
 }
